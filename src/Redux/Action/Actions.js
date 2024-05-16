@@ -14,6 +14,6 @@ export const toggleEventForm = (date) => ({
 });
 
 export const editItem = (item) => ({
-    type: 'calendar/editItem',
-    payload: item,
-  });
+  type: "calendar/editItem",
+  payload: item,
+});
