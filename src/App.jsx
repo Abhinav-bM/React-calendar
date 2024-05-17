@@ -20,8 +20,8 @@ function App() {
 
   const handleAddEvent = (date) => {
     setSelectedDate(date);
-    setEditEvent(null); // Clear edit state when adding a new event
-    setNewEvent({ title: "", type: "event" }); // Reset the new event state
+    setEditEvent(null); 
+    setNewEvent({ title: "", type: "event" });
     dispatch(toggleEventForm(true));
   };
 
@@ -40,8 +40,8 @@ function App() {
     } else {
       dispatch(addItem(newItem));
     }
-    setNewEvent({ title: "", type: "event" }); // Reset new event state
-    dispatch(toggleEventForm(false)); // Close event form after submission
+    setNewEvent({ title: "", type: "event" });
+    dispatch(toggleEventForm(false));
   };
 
   const handleEventDelete = (id) => {
@@ -49,10 +49,11 @@ function App() {
   };
 
   const handleEditEvent = (event) => {
-    setEditEvent(event); // Set state for editing the selected event
-    setNewEvent({ title: event.title, type: event.type }); // Populate form with existing data
-    setSelectedDate(event.date); // Set the selected date to the event's date
-    dispatch(toggleEventForm(true)); // Open form with the event's date
+    setEditEvent(event); 
+    // EXISTING DATA TO FORM
+    setNewEvent({ title: event.title, type: event.type });
+    setSelectedDate(event.date); 
+    dispatch(toggleEventForm(true));
   };
 
   return (
